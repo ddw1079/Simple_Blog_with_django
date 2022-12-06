@@ -1,0 +1,16 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+<div class="page-header">
+    <h1><a href="/">KHS BLOG</a></h1>
+</div>
+<a href="{% url 'main_page' %}" class="btn btn-default">메인</a>
+<div class="content container">
+    <div class="row">
+        <div class="col-md-8">
+            {% block post_content %}
+            {% endblock %}
+        </div>
+    </div>
+</div>
+{% endblock %}
