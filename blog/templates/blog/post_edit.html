@@ -7,4 +7,12 @@
     {{ form.as_p }}
     <button type="submit" class="save btn btn-default">Save</button>
 </form>
+<script>
+    $('#article_input').summernote({
+        placeholder:'Insert your story...',
+        lang: 'ko-KR',
+        height: 300
+    })
+    
+</script>
 {% endblock %}
