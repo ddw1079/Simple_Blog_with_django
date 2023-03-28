@@ -7,7 +7,7 @@ from .forms import PostForm
 # Create your views here.
 
 def main_page(request):
-    return render(request, 'blog/main_page.html',{})
+    return render(request, 'main/main_page.html',{})
 
 def post_list(request):
     posts = Post.objects.order_by('published_date')

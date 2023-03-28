@@ -1,3 +1,4 @@
+<!-- blog\templates\main\main_page.html -->
 {% load static %}
 
 <!DOCTYPE html>
@@ -12,8 +13,15 @@
 </head>
 <body>
     <div id="content" class="">
-        <h1><a href="{% url 'post_list' %}" class="btn btn-primary">Blog Main</a></h1>
-        <h1><a href="/" class="btn btn-primary">Bootstrap Component Test Page</a></h1>
+        {% if user.is_active %}
+        <h1>현재 {{ user.username }} 으로 로그인되어있습니다.</h3>
+        <h1><button class="btn btn-outline-danger">Logout</button></h1>
+        {% else %}
+        <h1>로그인하세요.</h1>
+        <h1><a class="btn btn-outline-success">Login</a></h1>
+        {% endif %}
+        <h1><a href="{% url 'post_list' %}" class="btn btn-outline-info">Blog Main</a></h1>
+        <h1><a href="/" class="btn btn-outline-primary">Bootstrap Component Test Page</a></h1>
     </div>
 </body>
 </html>
